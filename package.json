@@ -1,7 +1,7 @@
 {
   "name": "google_oauth-nodejs-oauth2-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Console log the URL that initiates the OAuth process with your values; or start a server that redirects you to the OAuth URL with your OAuth values.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

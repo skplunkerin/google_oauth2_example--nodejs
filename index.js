@@ -16,25 +16,8 @@ const oauth2Client = new google.auth.OAuth2(
   process.env.REDIRECT_URL
 );
 
-// Access scopes for read-only Drive activity.
-//
-// NOTE: these are specific to testing out the services Drive API and Sheets
-// API, to:
-//   1. (Drive API) Get a list of Sheet file types.
-//   2. (Sheets API) Use the `fileId` as the `spreadsheetId`.
-//      (before for some reason, the Sheets API doesn't allow me to get a list
-//       of Sheets, which is needed before using any endpoint that requires the
-//       `spreadsheetId`, which is almost all of them).
-//   3. (Sheets API) Get the Sheet contents, map them, and sync them to another
-//      platform.
-const scopes = [
-  // TODO: alter these to your specific scopes... (good luck finding that out)
-  "https://www.googleapis.com/auth/userinfo.email",
-  "https://www.googleapis.com/auth/userinfo.profile",
-  "https://www.googleapis.com/auth/drive.metadata.readonly",
-  "https://www.googleapis.com/auth/drive.readonly",
-  "https://www.googleapis.com/auth/spreadsheets.readonly",
-];
+// Access scopes.
+const scopes = process.env.SCOPES.split(" ");
 
 // Generate a url that asks permissions for the Drive activity scope
 const authorizationUrl = oauth2Client.generateAuthUrl({

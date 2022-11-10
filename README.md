@@ -25,8 +25,10 @@ _testing)._
 
 3. Start the project:
 
-   Set `START_SERVER=false` to console log the OAuth Step 1 url;\
-   Set `START_SERVER=true` to start a server that redirects to the OAuth url.
+   - Set `START_SERVER=false` to console log the URL to start the OAuth process.
+   - Set `START_SERVER=true` to start a server, then:
+     - go to `http://localhost:8080`
+     - and you'll be redirected to the OAuth url.
 
    ```sh
    node ./index.js
